@@ -1,0 +1,16 @@
+<% if flash[:alert] %>
+  <p style="background: #F59986;">ALERT: <%= flash[:alert] %></p>
+<% end %>
+<% if flash[:alert] %>
+  <p style="background: #78F5A4;">NOTICE: <%= flash[:notice] %></p>
+<% end %>
+
+<%= form_with url: todos_path, scope: :todo do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.submit 'create' %>
+<% end %>
+
+<% @todos.each do |todo| %>
+  <%= render 'todo', todo: todo %>
+<% end %>
