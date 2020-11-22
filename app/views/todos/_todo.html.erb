@@ -2,5 +2,5 @@
   <%= f.text_field :name %>
   <%= f.text_area :description %>
   <%= f.submit 'update' %>
-  <%= link_to 'delete', todo_path(todo), method: :delete %>
+  <%= button_to 'delete', todo, method: :delete %>
 <% end %>
